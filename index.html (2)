@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divorce Now</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Times New Roman', Times, serif;
+line-height: 1.6;
+color: #333;
+background-color: #f8f9fa;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+}
+
+header {
+text-align: center;
+padding: 60px 20px 40px;
+background-color: white;
+margin-bottom: 40px;
+border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+font-size: 2.5em;
+font-weight: 300;
+margin-bottom: 10px;
+letter-spacing: 2px;
+animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+opacity: 0;
+}
+100% {
+transform: rotate(360deg);
+opacity: 1;
+}
+}
+
+.about {
+background-color: white;
+padding: 40px;
+margin-bottom: 40px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.about h2 {
+font-size: 1.5em;
+font-weight: 400;
+margin-bottom: 20px;
+}
+
+.about p {
+color: #666;
+margin-bottom: 15px;
+}
+
+.form-section {
+background-color: white;
+padding: 40px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+margin-bottom: 40px;
+}
+
+.form-group {
+margin-bottom: 25px;
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+font-weight: 500;
+color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ddd;
+border-radius: 4px;
+font-size: 16px;
+font-family: inherit;
+transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+outline: none;
+border-color: #000;
+}
+
+textarea {
+min-height: 100px;
+resize: vertical;
+}
+
+.submit-btn {
+background-color: #000;
+color: white;
+padding: 15px 40px;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+width: 100%;
+}
+
+.submit-btn:hover {
+background-color: #333;
+}
+
+.success-message {
+background-color: #d4edda;
+color: #155724;
+padding: 15px;
+border-radius: 4px;
+margin-bottom: 20px;
+display: none;
+}
+
+.admin-section {
+background-color: white;
+padding: 40px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+margin-top: 40px;
+}
+
+.admin-section h3 {
+margin-bottom: 20px;
+font-weight: 400;
+}
+
+.submission {
+background-color: #f8f9fa;
+padding: 20px;
+margin-bottom: 20px;
+border-radius: 4px;
+border-left: 4px solid #000;
+}
+
+.submission p {
+margin-bottom: 8px;
+}
+
+.submission strong {
+color: #000;
+}
+
+.no-submissions {
+text-align: center;
+color: #999;
+padding: 40px;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>DIVORCE NOW</h1>
+</header>
+
+<div class="container">
+<div class="about" style="background-color: white; padding: 50px 40px; border-left: 4px solid #000;">
+<h2 style="color: #000; font-size: 2em; margin-bottom: 15px;">Affordable Paralegal Divorce Services</h2>
+<p style="font-size: 1.2em; margin-bottom: 20px; color: #333;">Skip the expensive lawyer fees. Our professional paralegal team helps you navigate the divorce process at a fraction of the cost.</p>
+<p style="font-size: 1.1em; margin-bottom: 15px; color: #333;">✓ Save thousands in legal fees</p>
+<p style="font-size: 1.1em; margin-bottom: 15px; color: #333;">✓ Expert document preparation</p>
+<p style="font-size: 1.1em; margin-bottom: 15px; color: #333;">✓ Fast, professional service</p>
+<p style="font-size: 1.1em; color: #333;">✓ Confidential and compassionate support</p>
+</div>
+
+<div class="about">
+<h2>How It Works</h2>
+<p>We understand that this is a difficult time, and we're here to help make the process as smooth and affordable as possible.</p>
+<p>Simply fill out the form below with your information. Once submitted, our paralegal team will review your case and get back to you within 24-48 hours with next steps and pricing.</p>
+<p>All information provided is confidential and will be handled with the utmost care.</p>
+</div>
+
+<div class="form-section">
+<div class="success-message" id="successMessage">
+Thank you for your submission. We will review your information and contact you soon.
+</div>
+
+<form id="divorceForm">
+<div class="form-group">
+<label for="fullName">Your Full Name *</label>
+<input type="text" id="fullName" name="fullName" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="text" id="phone" name="phone">
+</div>
+
+<div class="form-group">
+<label for="spouseName">Spouse's Full Name *</label>
+<input type="text" id="spouseName" name="spouseName" required>
+</div>
+
+<div class="form-group">
+<label for="marriageLength">Length of Marriage *</label>
+<input type="text" id="marriageLength" name="marriageLength" placeholder="e.g., 5 years, 10 years 3 months" required>
+</div>
+
+<div class="form-group">
+<label for="children">Children (Names and Ages) *</label>
+<textarea id="children" name="children" placeholder="e.g., John (12), Sarah (8), or 'No children'" required></textarea>
+</div>
+
+<div class="form-group">
+<label for="assets">Assets (Property, Vehicles, Bank Accounts, etc.) *</label>
+<textarea id="assets" name="assets" placeholder="Please list major assets including real estate, vehicles, bank accounts, investments, etc." required></textarea>
+</div>
+
+<div class="form-group">
+<label for="additionalInfo">Additional Information</label>
+<textarea id="additionalInfo" name="additionalInfo" placeholder="Any other relevant information you'd like to share"></textarea>
+</div>
+
+<button type="submit" class="submit-btn">Submit Form</button>
+</form>
+</div>
+
+<div class="admin-section">
+<h3>Submissions (Admin View)</h3>
+<div id="submissionsContainer">
+<p class="no-submissions">No submissions yet.</p>
+</div>
+</div>
+</div>
+
+<script>
+let submissions = [];
+
+document.getElementById('divorceForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+const formData = {
+timestamp: new Date().toLocaleString(),
+fullName: document.getElementById('fullName').value,
+email: document.getElementById('email').value,
+phone: document.getElementById('phone').value,
+spouseName: document.getElementById('spouseName').value,
+marriageLength: document.getElementById('marriageLength').value,
+children: document.getElementById('children').value,
+assets: document.getElementById('assets').value,
+additionalInfo: document.getElementById('additionalInfo').value
+};
+
+submissions.push(formData);
+
+document.getElementById('successMessage').style.display = 'block';
+
+this.reset();
+
+setTimeout(function() {
+document.getElementById('successMessage').style.display = 'none';
+}, 5000);
+
+displaySubmissions();
+
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+function displaySubmissions() {
+const container = document.getElementById('submissionsContainer');
+
+if (submissions.length === 0) {
+container.innerHTML = '<p class="no-submissions">No submissions yet.</p>';
+return;
+}
+
+let html = '';
+submissions.forEach((submission, index) => {
+html += `
+<div class="submission">
+<p><strong>Submission #${index + 1}</strong> - ${submission.timestamp}</p>
+<p><strong>Name:</strong> ${submission.fullName}</p>
+<p><strong>Email:</strong> ${submission.email}</p>
+<p><strong>Phone:</strong> ${submission.phone || 'Not provided'}</p>
+<p><strong>Spouse Name:</strong> ${submission.spouseName}</p>
+<p><strong>Marriage Length:</strong> ${submission.marriageLength}</p>
+<p><strong>Children:</strong> ${submission.children}</p>
+<p><strong>Assets:</strong> ${submission.assets}</p>
+${submission.additionalInfo ? `<p><strong>Additional Info:</strong> ${submission.additionalInfo}</p>` : ''}
+</div>
+`;
+});
+
+container.innerHTML = html;
+}
+</script>
+</body>
+</html>
